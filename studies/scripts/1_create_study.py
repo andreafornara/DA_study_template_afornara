@@ -57,7 +57,7 @@ d_config_mad = {"beam_config": {"lhcb1": {}, "lhcb2": {}}, "links": {}}
 
 ### For run III ions
 d_config_mad["links"]["acc-models-lhc"] = "/afs/cern.ch/eng/lhc/optics"
-d_config_mad["optics_file"] = "acc-models-lhc/runIII/RunIII_dev/ION_2024/opticsfile.21"
+d_config_mad["optics_file"] = "acc-models-lhc/runIII/RunIII_dev/ION_2025/opticsfile.21"
 d_config_mad["ver_hllhc_optics"] = None
 d_config_mad["ver_lhc_run"] = 3.0
 
