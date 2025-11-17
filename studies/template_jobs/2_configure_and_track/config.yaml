@@ -94,131 +94,152 @@ config_collider:
     nemitt_y: 1.65e-6
     mask_with_filling_pattern:
       pattern_fname: ../../filling_scheme/50ns_1240b_1088_1088_398_56bpi_PbPb_converted.json
-      i_bunch_b1: # If not specified, the bunch with the worst schedule is chosen
-      i_bunch_b2: # Same. A value for i_bunch_b1 and i_bunch_b2 must be specified if pattern_fname is specified
+      i_bunch_b1: 488 # If not specified, the bunch with the worst schedule is chosen
+      i_bunch_b2: 1373 # Same. A value for i_bunch_b1 and i_bunch_b2 must be specified if pattern_fname is specified
 
+    num_particles_per_bunch_before_optimization: 180000000.0
+    luminosity_ip1_without_beam_beam: 6.399460785151263e+27
+    Pile-up_ip1_without_beam_beam: 0.14697453060029442
+    luminosity_ip2_without_beam_beam: 6.397129038560226e+27
+    Pile-up_ip2_without_beam_beam: 0.1469209780632601
+    luminosity_ip5_without_beam_beam: 6.399448445738826e+27
+    Pile-up_ip5_without_beam_beam: 0.14697424720464408
+    luminosity_ip8_without_beam_beam: 1.013017892857854e+27
+    Pile-up_ip8_without_beam_beam: 0.06360066247252495
+    luminosity_ip1_with_beam_beam: 6.398257926585078e+27
+    Pile-up_ip1_with_beam_beam: 0.14694690490196155
+    luminosity_ip2_with_beam_beam: 6.399019584578244e+27
+    Pile-up_ip2_with_beam_beam: 0.14696439767670957
+    luminosity_ip5_with_beam_beam: 6.398404637981197e+27
+    Pile-up_ip5_with_beam_beam: 0.1469502743793757
+    luminosity_ip8_with_beam_beam: 1.0148074442657431e+27
+    Pile-up_ip8_with_beam_beam: 0.063713016514712
   skip_leveling: false
   config_lumi_leveling:
     ip1:
       luminosity: 6.4e+27
-      num_colliding_bunches:
+      num_colliding_bunches: 1088
       impose_separation_orthogonal_to_crossing: false
       knobs:
-        - on_sep1
+      - on_sep1
       bump_range:
         lhcb1:
-          - e.ds.l1.b1
-          - s.ds.r1.b1
+        - e.ds.l1.b1
+        - s.ds.r1.b1
         lhcb2:
-          - s.ds.r1.b2
-          - e.ds.l1.b2
+        - s.ds.r1.b2
+        - e.ds.l1.b2
       preserve_angles_at_ip: true
       preserve_bump_closure: true
       corrector_knob_names:
-        - corr_co_acbyvs4.l1b1
-        - corr_co_acbyhs4.l1b1
-        - corr_co_acbyvs4.r1b2
-        - corr_co_acbyhs4.r1b2
-        - corr_co_acbyhs4.r1b1
-        - corr_co_acbyvs4.r1b1
-        - corr_co_acbyhs4.l1b2
-        - corr_co_acbyvs4.l1b2
-        - corr_co_acbcv5.l1b1
-        - corr_co_acbch5.r1b1
-        - corr_co_acbcv5.r1b2
-        - corr_co_acbch5.l1b2
+      - corr_co_acbyvs4.l1b1
+      - corr_co_acbyhs4.l1b1
+      - corr_co_acbyvs4.r1b2
+      - corr_co_acbyhs4.r1b2
+      - corr_co_acbyhs4.r1b1
+      - corr_co_acbyvs4.r1b1
+      - corr_co_acbyhs4.l1b2
+      - corr_co_acbyvs4.l1b2
+      - corr_co_acbcv5.l1b1
+      - corr_co_acbch5.r1b1
+      - corr_co_acbcv5.r1b2
+      - corr_co_acbch5.l1b2
 
+      final_on_sep1: 0.008960217766162138
     ip5:
       luminosity: 6.4e+27
-      num_colliding_bunches:
+      num_colliding_bunches: 1088
       impose_separation_orthogonal_to_crossing: false
       knobs:
-        - on_sep5
+      - on_sep5
       bump_range:
         lhcb1:
-          - e.ds.l5.b1
-          - s.ds.r5.b1
+        - e.ds.l5.b1
+        - s.ds.r5.b1
         lhcb2:
-          - s.ds.r5.b2
-          - e.ds.l5.b2
+        - s.ds.r5.b2
+        - e.ds.l5.b2
       preserve_angles_at_ip: true
       preserve_bump_closure: true
       corrector_knob_names:
-        - corr_co_acbcv5.l5b1
-        - corr_co_acbch5.r5b1
-        - corr_co_acbyhs4.l5b1
-        - corr_co_acbyhs4.r5b1
-        - corr_co_acbyvs4.l5b1
-        - corr_co_acbyvs4.r5b1
-        - corr_co_acbcv5.r5b2
-        - corr_co_acbch5.l5b2
-        - corr_co_acbyhs4.l5b2
-        - corr_co_acbyhs4.r5b2
-        - corr_co_acbyvs4.l5b2
-        - corr_co_acbyvs4.r5b2
+      - corr_co_acbcv5.l5b1
+      - corr_co_acbch5.r5b1
+      - corr_co_acbyhs4.l5b1
+      - corr_co_acbyhs4.r5b1
+      - corr_co_acbyvs4.l5b1
+      - corr_co_acbyvs4.r5b1
+      - corr_co_acbcv5.r5b2
+      - corr_co_acbch5.l5b2
+      - corr_co_acbyhs4.l5b2
+      - corr_co_acbyhs4.r5b2
+      - corr_co_acbyvs4.l5b2
+      - corr_co_acbyvs4.r5b2
 
+      final_on_sep5: 0.008956425988719721
     ip2:
       luminosity: 6.4e+27
-      num_colliding_bunches:
+      num_colliding_bunches: 1088
       impose_separation_orthogonal_to_crossing: false
       knobs:
-        - on_sep2h
+      - on_sep2h
       bump_range:
         lhcb1:
-          - e.ds.l2.b1
-          - s.ds.r2.b1
+        - e.ds.l2.b1
+        - s.ds.r2.b1
         lhcb2:
-          - s.ds.r2.b2
-          - e.ds.l2.b2
+        - s.ds.r2.b2
+        - e.ds.l2.b2
       preserve_angles_at_ip: true
       preserve_bump_closure: true
       corrector_knob_names:
         # to preserve angles at ip
-        - corr_co_acbyvs4.l2b1
-        - corr_co_acbyhs4.l2b1
-        - corr_co_acbyvs4.r2b2
-        - corr_co_acbyhs4.r2b2
+      - corr_co_acbyvs4.l2b1
+      - corr_co_acbyhs4.l2b1
+      - corr_co_acbyvs4.r2b2
+      - corr_co_acbyhs4.r2b2
           # to close the bumps
-        - corr_co_acbyvs4.l2b2
-        - corr_co_acbyhs4.l2b2
-        - corr_co_acbyvs4.r2b1
-        - corr_co_acbyhs4.r2b1
-        - corr_co_acbyhs5.l2b2
-        - corr_co_acbyvs5.l2b2
-        - corr_co_acbchs5.r2b1
-        - corr_co_acbcvs5.r2b1
+      - corr_co_acbyvs4.l2b2
+      - corr_co_acbyhs4.l2b2
+      - corr_co_acbyvs4.r2b1
+      - corr_co_acbyhs4.r2b1
+      - corr_co_acbyhs5.l2b2
+      - corr_co_acbyvs5.l2b2
+      - corr_co_acbchs5.r2b1
+      - corr_co_acbcvs5.r2b1
 
+      final_on_sep2: 0.0
     ip8:
       luminosity: 1.0e+27
-      num_colliding_bunches:
+      num_colliding_bunches: 398
       impose_separation_orthogonal_to_crossing: false
       knobs:
-        - on_sep8v
+      - on_sep8v
       bump_range:
         lhcb1:
-          - e.ds.l8.b1
-          - s.ds.r8.b1
+        - e.ds.l8.b1
+        - s.ds.r8.b1
         lhcb2:
-          - s.ds.r8.b2
-          - e.ds.l8.b2
+        - s.ds.r8.b2
+        - e.ds.l8.b2
       preserve_angles_at_ip: true
       preserve_bump_closure: true
       corrector_knob_names:
         # to preserve angles at ip
-        - corr_co_acbyvs4.l8b1
-        - corr_co_acbyhs4.l8b1
-        - corr_co_acbyvs4.r8b2
-        - corr_co_acbyhs4.r8b2
+      - corr_co_acbyvs4.l8b1
+      - corr_co_acbyhs4.l8b1
+      - corr_co_acbyvs4.r8b2
+      - corr_co_acbyhs4.r8b2
           # to close the bumps
-        - corr_co_acbyvs4.l8b2
-        - corr_co_acbyhs4.l8b2
-        - corr_co_acbyvs4.r8b1
-        - corr_co_acbyhs4.r8b1
-        - corr_co_acbcvs5.l8b2
-        - corr_co_acbchs5.l8b2
-        - corr_co_acbyvs5.r8b1
-        - corr_co_acbyhs5.r8b1
+      - corr_co_acbyvs4.l8b2
+      - corr_co_acbyhs4.l8b2
+      - corr_co_acbyvs4.r8b1
+      - corr_co_acbyhs4.r8b1
+      - corr_co_acbcvs5.l8b2
+      - corr_co_acbchs5.l8b2
+      - corr_co_acbyvs5.r8b1
+      - corr_co_acbyhs5.r8b1
 
+      final_on_sep8: 0.0
 config_simulation:
   # Collider file
   collider_file: ../1_build_distr_and_collider/collider.json.zip
@@ -233,14 +254,14 @@ config_simulation:
   n_turns: 1000 # number of turns to track
 
   # Beam to track
-  beam: "lhcb1" #lhcb1 or lhcb2
+  beam: lhcb1   #lhcb1 or lhcb2
 
 # Save collider or not
-dump_collider: false
-dump_config_in_collider: false
+dump_collider: true
+dump_config_in_collider: true
 
 # Context for the simulation
-context: "cpu" # 'cupy' # opencl
+context: cpu   # 'cupy' # opencl
 
 # Device number for GPU simulation
 device_number: # 0
