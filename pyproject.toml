@@ -8,18 +8,19 @@ readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.10,<4.0"
 xmask = {path = "external_dependencies/xmask", develop = true}
 tree-maker = {git = "https://github.com/xsuite/tree_maker.git"}
-xsuite = "^0.18.2"
+xsuite = { git = "https://github.com/xsuite/xsuite.git", tag = "v0.18.2" }
 fastparquet = "^2024.5.0"
 cupy-cuda11x = "^13.2.0"
 psutil = "^6.0.0"
 cpymad = "^1.16.3"
 nafflib = "^2.0.2"
+matplotlib = "^3.10.7"
 
 [tool.poetry.group.dev.dependencies]
-ipykernel = "^6.29.4"
+ipykernel = "*"
 
 [build-system]
 requires = ["poetry-core"]
