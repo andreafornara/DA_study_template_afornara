@@ -98,22 +98,22 @@ config_collider:
       i_bunch_b2: 1373 # Same. A value for i_bunch_b1 and i_bunch_b2 must be specified if pattern_fname is specified
 
     num_particles_per_bunch_before_optimization: 180000000.0
-    luminosity_ip1_without_beam_beam: 6.399460785151263e+27
-    Pile-up_ip1_without_beam_beam: 0.14697453060029442
-    luminosity_ip2_without_beam_beam: 6.397129038560226e+27
-    Pile-up_ip2_without_beam_beam: 0.1469209780632601
-    luminosity_ip5_without_beam_beam: 6.399448445738826e+27
-    Pile-up_ip5_without_beam_beam: 0.14697424720464408
-    luminosity_ip8_without_beam_beam: 1.013017892857854e+27
-    Pile-up_ip8_without_beam_beam: 0.06360066247252495
-    luminosity_ip1_with_beam_beam: 6.398257926585078e+27
-    Pile-up_ip1_with_beam_beam: 0.14694690490196155
-    luminosity_ip2_with_beam_beam: 6.399019584578244e+27
-    Pile-up_ip2_with_beam_beam: 0.14696439767670957
-    luminosity_ip5_with_beam_beam: 6.398404637981197e+27
-    Pile-up_ip5_with_beam_beam: 0.1469502743793757
-    luminosity_ip8_with_beam_beam: 1.0148074442657431e+27
-    Pile-up_ip8_with_beam_beam: 0.063713016514712
+    luminosity_ip1_without_beam_beam: 6.399459464148059e+27
+    Pile-up_ip1_without_beam_beam: 0.146974500261203
+    luminosity_ip2_without_beam_beam: 6.397144830180212e+27
+    Pile-up_ip2_without_beam_beam: 0.1469213407447442
+    luminosity_ip5_without_beam_beam: 6.399446785993861e+27
+    Pile-up_ip5_without_beam_beam: 0.14697420908577044
+    luminosity_ip8_without_beam_beam: 1.013030392704405e+27
+    Pile-up_ip8_without_beam_beam: 0.0636014472548344
+    luminosity_ip1_with_beam_beam: 6.398263998990595e+27
+    Pile-up_ip1_with_beam_beam: 0.14694704436511016
+    luminosity_ip2_with_beam_beam: 6.398941856561761e+27
+    Pile-up_ip2_with_beam_beam: 0.14696261252025336
+    luminosity_ip5_with_beam_beam: 6.398415079591774e+27
+    Pile-up_ip5_with_beam_beam: 0.14695051418876973
+    luminosity_ip8_with_beam_beam: 1.0148070342948805e+27
+    Pile-up_ip8_with_beam_beam: 0.06371299077536562
   skip_leveling: false
   config_lumi_leveling:
     ip1:
@@ -145,7 +145,7 @@ config_collider:
       - corr_co_acbcv5.r1b2
       - corr_co_acbch5.l1b2
 
-      final_on_sep1: 0.008960217766162138
+      final_on_sep1: 0.008960158846119016
     ip5:
       luminosity: 6.4e+27
       num_colliding_bunches: 1088
@@ -175,7 +175,7 @@ config_collider:
       - corr_co_acbyvs4.l5b2
       - corr_co_acbyvs4.r5b2
 
-      final_on_sep5: 0.008956425988719721
+      final_on_sep5: 0.008956516689843224
     ip2:
       luminosity: 6.4e+27
       num_colliding_bunches: 1088
