@@ -14,9 +14,9 @@ studies/submission_files/*
 
 # AFS files
 .__afs*
-
 # Python virtual environment
 .venv/
+miniforge/
 
 #vscode config
 .vscode/
@@ -28,7 +28,10 @@ studies/scans/**/tree_maker.json
 studies/scans/**/tree_maker.log
 !studies/scans/**/da.parquet
 !studies/scans/.gitkeep
-
+studies/template_jobs/1_build_distr_and_collider/collider.json.zip
+studies/template_jobs/1_build_distr_and_collider/tree_maker.log
+studies/template_jobs/1_build_distr_and_collider/collider.json.zip
+studies/template_jobs/2_configure_and_track/tree_maker.log
 # filling_schemes
 !studies/filling_scheme/*
 
