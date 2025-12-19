@@ -21,6 +21,8 @@ import pandas as pd
 import tree_maker
 import xmask as xm
 import xmask.lhc as xlhc
+import xtrack as xt
+import xobjects as xo
 import yaml
 from cpymad.madx import Madx
 
@@ -105,7 +107,7 @@ def build_collider_from_mad(config_mad, sanity_checks=True):
 
     mad_b4 = Madx(command_log="mad_b4.log")
 
-    # Build sequences
+    # Build sequences (new version doesn't take beam_config parameter)
     ost.build_sequence(mad_b1b2, mylhcbeam=1)
     ost.build_sequence(mad_b4, mylhcbeam=4)
 
@@ -128,6 +130,9 @@ def build_collider_from_mad(config_mad, sanity_checks=True):
         ost.check_madx_lattices(mad_b4)
 
     # Build xsuite collider
+    # Note: This returns xt.Multiline (a class that inherits from xt.Environment)
+    # You'll see a deprecation warning, but the API is identical to Environment
+    # All lines share variables via collider.vars[...]
     collider = xlhc.build_xsuite_collider(
         sequence_b1=mad_b1b2.sequence.lhcb1,
         sequence_b2=mad_b1b2.sequence.lhcb2,
@@ -145,7 +150,7 @@ def build_collider_from_mad(config_mad, sanity_checks=True):
     if sanity_checks:
         collider["lhcb1"].twiss(method="4d")
         collider["lhcb2"].twiss(method="4d")
-    # Return collider
+    # Return collider (Environment object)
     return collider
 
 
