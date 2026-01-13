@@ -11,7 +11,7 @@ config_mad:
     acc-models-lhc: ../../../external_dependencies/acc-models-lhc
 
   # Optics file
-  optics_file: acc-models-lhc/strengths/flat/opt_flathv_500_2000_thin.madx
+  optics_file: acc-models-lhc/strengths/flat/opt_flathv_75_180_1500_thin.madx
 
   # Beam parameters
   beam_config:
