@@ -25,22 +25,26 @@ twiss_b1_env = env['lhcb1'].twiss()
 twiss_b2_env = env['lhcb2'].twiss()
 
 # %%
-# Print betx, bety, px, py at IPs
+# Print betx, bety, px, py at IPs and tunes
 print("\nBeam 1:")
 for ip in ['ip1', 'ip5', 'ip2', 'ip8']:
+    qx = twiss_b1_env['qx']
+    qy = twiss_b1_env['qy']
     betx = twiss_b1_env['betx', ip]
     bety = twiss_b1_env['bety', ip]
     px = twiss_b1_env['px', ip]
     py = twiss_b1_env['py', ip]
-    print(f"{ip}: betx={betx:.3f} m, bety={bety:.3f} m, px={px:.6f}, py={py:.6f}")
+    print(f"{ip}: betx={betx:.3f} m, bety={bety:.3f} m, px={px:.6f}, py={py:.6f}, qx={qx:.6f}, qy={qy:.6f}")
 
 print("\nBeam 2:")
 for ip in ['ip1', 'ip5', 'ip2', 'ip8']:
+    qx = twiss_b2_env['qx']
+    qy = twiss_b2_env['qy']
     betx = twiss_b2_env['betx', ip]
     bety = twiss_b2_env['bety', ip]
     px = twiss_b2_env['px', ip]
     py = twiss_b2_env['py', ip]
-    print(f"{ip}: betx={betx:.3f} m, bety={bety:.3f} m, px={px:.6f}, py={py:.6f}")
+    print(f"{ip}: betx={betx:.3f} m, bety={bety:.3f} m, px={px:.6f}, py={py:.6f}, qx={qx:.6f}, qy={qy:.6f}")
 
 # %%
 # Plot orbit (x, y) for both beams
