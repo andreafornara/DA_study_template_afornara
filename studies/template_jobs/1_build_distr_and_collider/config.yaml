@@ -8,10 +8,10 @@ config_particles:
 config_mad:
   # Links to be made for tools and scripts
   links:
-    acc-models-lhc: ../../../../../external_dependencies/acc-models-lhc
+    acc-models-lhc: ../../../external_dependencies/acc-models-lhc
 
   # Optics file
-  optics_file: acc-models-lhc/strengths/flat/opt_flathv_500_2000_thin.madx
+  optics_file: acc-models-lhc/strengths/flat/opt_flathv_75_180_1500_thin.madx
 
   # Beam parameters
   beam_config:

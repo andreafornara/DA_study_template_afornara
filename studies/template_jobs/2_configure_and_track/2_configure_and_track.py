@@ -502,11 +502,11 @@ def configure_collider(
         # Uncompress file locally
         with ZipFile(config_sim["collider_file"], "r") as zip_ref:
             zip_ref.extractall()
-        collider = xt.Multiline.from_json(
+        collider = xt.Environment.from_json(
             config_sim["collider_file"].split("/")[-1].replace(".zip", "")
         )
     else:
-        collider = xt.Multiline.from_json(config_sim["collider_file"])
+        collider = xt.Environment.from_json(config_sim["collider_file"])
 
     # Install beam-beam
     collider, config_bb = install_beam_beam(collider, config_collider)
@@ -518,6 +518,12 @@ def configure_collider(
 
     # Set knobs
     collider, conf_knobs_and_tuning = set_knobs(config_collider, collider)
+
+    # Fix RF cavity lag for both beams
+    for line_name in ["lhcb1", "lhcb2"]:
+        for ii in collider[line_name].element_names:
+            if ii.startswith('acsca'):
+                collider[line_name][ii].lag = 180.000000001
 
     # Match tune and chromaticity
     collider = match_tune_and_chroma(
@@ -573,7 +579,7 @@ def configure_collider(
     collider_before_bb = None
     if return_collider_before_bb:
         print("Saving collider before beam-beam configuration")
-        collider_before_bb = xt.Multiline.from_dict(collider.to_dict())
+        collider_before_bb = xt.Environment.from_dict(collider.to_dict())
 
     if not config_bb["skip_beambeam"]:
         # Configure beam-beam
@@ -640,17 +646,21 @@ def track(collider, particles, config_sim, save_input_particles=False):
     # Get beam being tracked
     beam = config_sim["beam"]
 
+    # Get the line reference BEFORE optimization (important!)
+    # optimize_for_tracking() disables xdeps expressions, which can break Environment's ref_manager
+    line = collider[beam]
+
     # Optimize line for tracking
-    collider[beam].optimize_for_tracking()
+    line.optimize_for_tracking()
 
     # Save initial coordinates if requested
     if save_input_particles:
         pd.DataFrame(particles.to_dict()).to_parquet("input_particles.parquet")
 
-    # Track
+    # Track (use the line reference directly, not collider[beam])
     num_turns = config_sim["n_turns"]
     a = time.time()
-    collider[beam].track(particles, turn_by_turn_monitor=False, num_turns=num_turns)
+    line.track(particles, turn_by_turn_monitor=False, num_turns=num_turns)
     b = time.time()
 
     print(f"Elapsed time: {b-a} s")

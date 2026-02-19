@@ -1,7 +1,7 @@
 "root":
   setup_env_script: "none"
   # Following parameter is ignored when run_on is not htc_docker or slurm_docker
-  singularity_image: "/cvmfs/unpacked.cern.ch/gitlab-registry.cern.ch/cdroin/da-study-docker:74ed75ec"
+  singularity_image: "/cvmfs/unpacked.cern.ch/gitlab-registry.cern.ch/afornara/dockerfile_test:latest"
   # use_eos_for_large_files: true
   # eos_path: "root://eosuser.cern.ch//eos/user/c/cdroin/HTC"
   generations:
