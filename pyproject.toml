@@ -16,13 +16,13 @@ tree-maker = { git = "https://github.com/xsuite/tree_maker.git" }
 setuptools = "^80.0.0"
 wheel = "^0.45.0"
 
-xsuite   = "0.45.11"
-xtrack = { git = "https://github.com/andreafornara/xtrack.git", branch = "lumi_with_crabs" }
-xpart    = "0.23.5"
-xfields  = "0.25.8"
+xsuite = "0.46.4"
+xtrack = "0.99.4"
+xpart    = "0.23.8"
+xfields  = "0.25.9"
 xobjects = "0.5.12"
-xdeps    = "0.10.10"
-xcoll    = "0.8.0"
+xdeps    = "0.10.11"
+xcoll    = "0.9.4"
 
 fastparquet  = "2025.12.0"
 cupy-cuda11x = "13.6.0"

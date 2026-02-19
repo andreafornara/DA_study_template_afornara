@@ -3,10 +3,10 @@
 	url = https://gitlab.cern.ch/acc-models/acc-models-lhc.git
 	branch = hl16
 
-# [submodule "external_dependencies/xtrack"]
-# 	path = external_dependencies/xtrack
-# 	url = https://github.com/ColasDroin/xtrack.git
-# 	branch = lumi_with_crabs
+[submodule "external_dependencies/xtrack"]
+	path = external_dependencies/xtrack
+	url = https://github.com/andreafornara/xtrack.git
+	branch = lumi_with_crabs
 
 [submodule "external_dependencies/xmask"]
 	path = external_dependencies/xmask
