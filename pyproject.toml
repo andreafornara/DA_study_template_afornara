@@ -4,7 +4,7 @@ version = "0.1.0"
 
 [tool.poetry]
 description = "Dynamic aperture boilerplate for LHC (including HL-LHC) simulations"
-authors = ["Colas Droin <colas.noe.droin@cern.ch>"]
+authors = ["Colas Droin <andrea.fornara@cern.ch>"]
 license = "MIT"
 readme = "README.md"
 package-mode = false
