@@ -17,7 +17,7 @@ setuptools = "^80.0.0"
 wheel = "^0.45.0"
 
 xsuite   = "0.45.11"
-xtrack   = "0.98.9"
+xtrack = { git = "https://github.com/andreafornara/xtrack.git", branch = "lumi_with_crabs" }
 xpart    = "0.23.5"
 xfields  = "0.25.8"
 xobjects = "0.5.12"
