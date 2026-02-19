@@ -9,7 +9,7 @@ collider = xt.Multiline.from_json('collider_final.json')
 
 # %%
 # Load collider with Environment structure
-env = xt.load('collider_final.json')
+env = xt.Environment.from_json('collider_final.json')
 
 # %%
 # Build trackers for both structures
@@ -179,3 +179,5 @@ ax[1].tick_params(axis='both', labelsize=fs)
 
 plt.suptitle('Phase Space', fontsize=fs)
 plt.tight_layout()
+
+# %%
