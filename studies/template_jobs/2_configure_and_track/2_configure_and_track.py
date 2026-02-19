@@ -519,6 +519,12 @@ def configure_collider(
     # Set knobs
     collider, conf_knobs_and_tuning = set_knobs(config_collider, collider)
 
+    # Fix RF cavity lag for both beams
+    for line_name in ["lhcb1", "lhcb2"]:
+        for ii in collider[line_name].element_names:
+            if ii.startswith('acsca'):
+                collider[line_name][ii].lag = 180.000000001
+
     # Match tune and chromaticity
     collider = match_tune_and_chroma(
         collider, conf_knobs_and_tuning, match_linear_coupling_to_zero=True
